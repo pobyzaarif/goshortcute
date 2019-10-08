@@ -11,7 +11,7 @@ import (
 func TestStringSliceContains(t *testing.T) {
 	// Input Slice.
 	var slicetest []string
-	slicetest = append(slicetest, "stringone", "stringtwo")
+	slicetest = append(slicetest, "stringonegotwrong", "stringtwo")
 
 	// Lists of normal case scenarios.
 	listTest := map[string]bool{
