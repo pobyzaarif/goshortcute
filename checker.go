@@ -1,4 +1,4 @@
-package shortcute
+package goshortcute
 
 // StringSliceContains : tells whether a contains x
 func StringSliceContains(a []string, x string) bool {
