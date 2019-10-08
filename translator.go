@@ -1,4 +1,4 @@
-package shortcute
+package goshortcute
 
 import (
 	"crypto/md5"
