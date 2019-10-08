@@ -2,8 +2,7 @@ language: go
 
 branches:
   only:
-    - /(travis)/
-    - /develop/
+    - master
 
 go:
   - '1.10.3'
