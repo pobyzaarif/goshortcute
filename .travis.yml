@@ -1,5 +1,10 @@
 language: go
 
+branches:
+  only:
+    - /(travis)/
+    - /develop/
+
 go:
   - '1.10.3'
 
