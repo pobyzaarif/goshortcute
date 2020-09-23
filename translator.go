@@ -2,8 +2,10 @@ package goshortcute
 
 import (
 	"crypto/md5"
+	"crypto/sha256"
 	"encoding/base64"
 	"encoding/hex"
+	"fmt"
 )
 
 // StringtoMD5Hash : encode text string to md5 string.
@@ -30,4 +32,12 @@ func StringtoBase64Encode(text string) string {
 func StringtoBase64Decode(text string) string {
 	decode, _ := base64.StdEncoding.DecodeString(string(text))
 	return string(decode)
+}
+
+// StringtoSHA256Hash : hash text string to SHA256 string.
+// input : hello | output : 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
+func StringtoSHA256Hash(text string) string {
+	textByte := []byte(text)
+	hash := sha256.Sum256(textByte)
+	return fmt.Sprintf("%x", hash[:])
 }
