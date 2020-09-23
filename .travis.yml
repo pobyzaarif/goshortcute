@@ -5,7 +5,7 @@ branches:
     - master
 
 go:
-  - '1.10.3'
+  - '1.13'
 
 script:
-  - go test
+  - go test -v
