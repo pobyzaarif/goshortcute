@@ -8,4 +8,4 @@ go:
   - '1.10.3'
 
 script:
-  - go test -v
+  - go test
