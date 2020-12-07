@@ -1,6 +1,6 @@
 package goshortcute
 
-import gs "../.."
+import gs "github.com/pobyzaarif/goshortcute"
 
 var (
 	// KODEPOS : List of kodepos in indonesia
