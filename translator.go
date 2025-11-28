@@ -60,8 +60,25 @@ func PKCS7Padding(ciphertext []byte, blockSize int) []byte {
 // PKCS7UnPadding : ...
 func PKCS7UnPadding(origData []byte) []byte {
 	length := len(origData)
+	if length == 0 {
+		return origData
+	}
+
 	unpadding := int(origData[length-1])
-	return origData[:(length - unpadding)]
+	// validate padding length
+	if unpadding <= 0 || unpadding > length {
+		return origData
+	}
+
+	// verify all padding bytes are equal to the padding value
+	padStart := length - unpadding
+	for i := padStart; i < length; i++ {
+		if origData[i] != byte(unpadding) {
+			return origData
+		}
+	}
+
+	return origData[:padStart]
 }
 
 // AESCBCEncrypt : AES Encryption function
